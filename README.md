@@ -1,8 +1,9 @@
-## Play-Sheet-Save-PNG-PDF
-# Phát Nhạc Sheet Tải Về PNG PDF
+# Play-Sheet-Save-PNG-PDF
+## Phát Nhạc Sheet Tải Về PNG PDF
 -Vui lòng tải lên một file MusicXML hoặc Guitar Pro</br>
--Các File hợp lệ :(xuất ra PNG PDF ) là .xml, .musicxml, và ( không xuất PNG PDF ) là .gp, .gpx, .gp5, .gp4, .gp3</br></br>
+-Các File hợp lệ :(xuất ra PNG PDF ) là .xml, .musicxml, và ( không xuất PNG PDF ) là .gp, .gpx, .gp5, .gp4, .gp3</br>
 ***Hướng dẩn***</br>
 -Chọn 1 vị trí bất kỳ trên sheet để phát</br>
 -Chọn Play để phát từ đầu hoặc nhấn nữa để Pause,dừng thì nhấn Stop</br>
-# ---Chúc Trải Nghiệm Vui Vẻ---
+### ---Chúc Trải Nghiệm Vui Vẻ---
+Link : https://trancuongpro.github.io/Play-Sheet-Save-PNG-PDF/
