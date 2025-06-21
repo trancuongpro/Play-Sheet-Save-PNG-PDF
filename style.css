@@ -1,0 +1,121 @@
+--- START OF FILE style.css ---
+
+/* Cài đặt chung và Font chữ */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+/* Phần Header */
+header {
+    background-color: #fff; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center; border-bottom: 1px solid #ddd;
+}
+.upload-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; 
+}
+.upload-section button {
+    padding: 10px 15px; font-size: 1em; cursor: pointer; background-color: #007bff;
+    color: white; border: none; border-radius: 5px; transition: background-color 0.2s;
+}
+.upload-section button:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+.upload-section button:hover:not(:disabled) { background-color: #0056b3; }
+#file-name { 
+    font-style: italic; 
+    color: #666; 
+    margin-top: 5px; 
+    width: 100%;
+}
+
+/* Phần nội dung chính */
+main { padding: 20px; padding-bottom: 150px; }
+#alpha-tab-container {
+    background-color: #fff; border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    position: relative; 
+    overflow: hidden;
+}
+.placeholder { padding: 50px; text-align: center; color: #999; }
+
+/* Con trỏ AlphaTab (vô hình) */
+.at-cursor-bar {
+    opacity: 0 !important;
+    pointer-events: none !important; 
+}
+
+/* Con trỏ tùy chỉnh (thay bằng ngón tay) */
+#custom-cursor {
+    position: absolute;
+    font-size: 28px; 
+    will-change: transform;
+    pointer-events: none; 
+    opacity: 0; 
+    z-index: 999;
+    transform-origin: top center;
+}
+#custom-cursor::before {
+    content: '👇';
+}
+#custom-cursor.visible {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+/* Thanh điều khiển */
+footer {
+    position: fixed; bottom: 0; left: 0; width: 100%;
+    background-color: #ffffff; border-top: 1px solid #ccc;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.15); z-index: 1000; padding: 10px 0;
+}
+.player-controls {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 15px; max-width: 900px; margin: 0 auto; padding: 0 20px;
+}
+.buttons { display: flex; gap: 10px; }
+.buttons button {
+    background-color: #007bff; color: white; border: none; border-radius: 5px;
+    padding: 10px 20px; font-size: 1em; font-weight: bold; cursor: pointer;
+    min-width: 90px; transition: background-color 0.2s ease;
+}
+.buttons button:hover:not(:disabled) { background-color: #0056b3; }
+.buttons button:disabled { cursor: not-allowed; background-color: #a0a0a0; opacity: 0.7; }
+.timeline { display: flex; align-items: center; gap: 10px; width: 100%; }
+
+#timeline-slider:disabled { 
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+#total-time.signature {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #888;
+    min-width: 120px;
+    text-align: right;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    h1 { font-size: 1.5em; }
+    main { padding-bottom: 160px; }
+}
+
+/* MỚI: Style để ẩn container của OSMD một cách thông minh */
+/* Thay vì display: none, chúng ta đẩy nó ra khỏi màn hình */
+#osmd-container {
+    position: absolute;
+    top: 0;
+    left: -9999px; /* Đẩy sang trái rất xa */
+    width: 800px; /* Cung cấp một chiều rộng cố định để OSMD tính toán */
+    opacity: 0; /* Làm cho nó trong suốt hoàn toàn */
+    pointer-events: none; /* Không cho phép tương tác với nó */
+}

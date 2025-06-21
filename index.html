@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicXML Player</title>
+    <link rel="icon" type="image/png" href="favicon.ico">    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Phát Nhạc Theo Sheet Và Tải PNG PDF</h1>
+        <div class="upload-section">
+            <input type="file" id="file-input" accept=".xml, .musicxml, .gp, .gpx, .gp5, .gp4, .gp3" style="display: none;">
+            <button id="upload-button">⬆️ Tải Lên File Sheet</button>
+            <!-- MỚI: Thêm các nút xuất file -->
+            <button id="export-png-btn" disabled>📄 Xuất PNG</button>
+            <button id="export-pdf-btn" disabled>📕 Xuất PDF</button>
+            <p id="file-name">Chưa có file nào được chọn</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Container cho AlphaTab (hiển thị) -->
+        <div id="alpha-tab-container">
+            <p class="placeholder">Vui lòng tải lên một file MusicXML hoặc Guitar Pro</br>Các File hợp lệ :(xuất ra PNG PDF ) là .xml, .musicxml, và ( không xuất PNG PDF ) là .gp, .gpx, .gp5, .gp4, .gp3</br></br>***Hướng dẩn***</br>Chọn 1 vị trí bất kỳ trên sheet để phát</br>Chọn Play để phát từ đầu hoặc nhấn nữa để Pause,dừng thì nhấn Stop</br>---Chúc Trải Nghiệm Vui Vẻ---</p>
+        </div>
+        
+        <!-- MỚI: Container "ẩn" cho OSMD, không còn style="display: none;" -->
+        <div id="osmd-container"></div>
+    </main>
+    
+    <footer>
+        <div class="player-controls">
+            <div class="timeline">
+                <span id="current-time">00:00</span>
+                <input type="range" id="timeline-slider" value="0" step="1" disabled>
+                <span id="total-time" class="signature">Trần Cường Thiết Kế...Zalo:0907860662</span>
+            </div>
+            <div class="buttons">
+                <button id="play-pause-btn" disabled><span>Play</span></button>
+                <button id="stop-btn" disabled>Stop</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MỚI: Tải các thư viện cần thiết cho việc xuất file -->
+    <!-- OSMD 1.9.0 -->
+    <script src="opensheetmusicdisplay.min.js"></script>
+    <!-- jsPDF -->
+    <script src="jspdf.umd.min.js"></script>
+
+    <!-- Các script cũ cho việc phát nhạc -->
+    <script src="alphaTab.js"></script>
+    <script src="script.js"></script>
+
+    <!-- MỚI: Script dành riêng cho logic xuất file với OSMD -->
+    <script src="xuat.js"></script>
+
+</body>
+</html>
